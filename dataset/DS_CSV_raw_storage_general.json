@@ -1,0 +1,27 @@
+{
+	"name": "DS_CSV_raw_storage_general",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_conexion_storage_general",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "DS_CSV_raws_storages"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "csv_loans",
+				"container": "containerraw"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

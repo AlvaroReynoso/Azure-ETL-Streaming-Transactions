@@ -1,0 +1,9 @@
+{
+	"name": "midatafactoryalvaro",
+	"location": "brazilsouth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "bd6b4fe6-aa06-424a-96cf-f8bfedc77522",
+		"tenantId": "f8665296-99ec-4c56-8ec6-6385ed1c7cc9"
+	}
+}

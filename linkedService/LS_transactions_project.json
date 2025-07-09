@@ -1,0 +1,13 @@
+{
+	"name": "LS_transactions_project",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureDatabricks",
+		"typeProperties": {
+			"domain": "https://adb-1033454553945759.19.azuredatabricks.net",
+			"existingClusterId": "0627-011511-guaf4c1k",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDE2MEZGNENGLTVCNTUtNDNBMy1CNzRELUY3NDYwODE0NjUwQV85NWYwODRmYy03NDBhLTRjMzQtOTU4My1iMDA0MzQ1OTM4YmMiDQp9"
+		}
+	}
+}

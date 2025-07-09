@@ -1,0 +1,82 @@
+{
+	"name": "PL_Bronze",
+	"properties": {
+		"activities": [
+			{
+				"name": "Bronze",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/luchotessa1@hotmail.com/notebooks_medallion_scripts/capa_bronze"
+				},
+				"linkedServiceName": {
+					"referenceName": "LS_databricks_medallion",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "Execute Silver",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Bronze",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "PL_Silver",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "fallo bronze",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Bronze",
+						"dependencyConditions": [
+							"Failed"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "PipelineStatus",
+					"value": "fallo en  Bronze"
+				}
+			}
+		],
+		"variables": {
+			"PipelineStatus": {
+				"type": "String"
+			}
+		},
+		"folder": {
+			"name": "PL_Loan_Project"
+		},
+		"annotations": [],
+		"lastPublishTime": "2025-06-30T18:50:03Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

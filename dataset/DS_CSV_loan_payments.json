@@ -1,0 +1,45 @@
+{
+	"name": "DS_CSV_loan_payments",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_conexion_storage_general",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "DS_CSV_raws"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "loan_payments.csv",
+				"folderPath": "csv_loans",
+				"container": "containerraw"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "payment_id",
+				"type": "String"
+			},
+			{
+				"name": "loan_id",
+				"type": "String"
+			},
+			{
+				"name": "payment_date",
+				"type": "String"
+			},
+			{
+				"name": "amount_paid",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

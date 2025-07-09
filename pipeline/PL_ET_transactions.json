@@ -1,0 +1,83 @@
+{
+	"name": "PL_ET_transactions",
+	"properties": {
+		"activities": [
+			{
+				"name": "transaction_bronze",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/luchotessa1@hotmail.com/notebooks_medallon_transactions/bronzeTransactions"
+				},
+				"linkedServiceName": {
+					"referenceName": "LS_transactions_project",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "transactions_silver",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "transaction_bronze",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/luchotessa1@hotmail.com/notebooks_medallon_transactions/silverTransactions"
+				},
+				"linkedServiceName": {
+					"referenceName": "LS_transactions_project",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "Ejecutar Gold Final",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "transactions_silver",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "PL_L_transactions",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"folder": {
+			"name": "PL_transactions_streaming_project"
+		},
+		"annotations": [],
+		"lastPublishTime": "2025-07-08T19:20:21Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

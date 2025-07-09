@@ -1,0 +1,84 @@
+{
+	"name": "DS_SQL_transactions_generals",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQL_Database",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "DS_transactions_streaming_project"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "transaction_id",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "customer_id",
+				"type": "varchar"
+			},
+			{
+				"name": "amount",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "timestamp",
+				"type": "datetimeoffset",
+				"scale": 7
+			},
+			{
+				"name": "merchant",
+				"type": "varchar"
+			},
+			{
+				"name": "country",
+				"type": "varchar"
+			},
+			{
+				"name": "channel",
+				"type": "varchar"
+			},
+			{
+				"name": "category",
+				"type": "varchar"
+			},
+			{
+				"name": "year",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "month",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "day",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "hour",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "is_fraud_suspected",
+				"type": "bit"
+			},
+			{
+				"name": "amount_level",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Transactions_general"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "Seteo_Trigger_a_eleccion_21HS_determinado",
+	"properties": {
+		"description": "Trigger que ejecuta Pipeline de prestamos bancarios (punta a punta medallón) en horario 21:00:00 Brasilia (UTC-3)",
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "PL_Copy_CSV_to_SQL",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 45,
+				"startTime": "2025-07-01T21:00:00",
+				"endTime": "2025-07-31T22:00:00",
+				"timeZone": "E. South America Standard Time"
+			}
+		}
+	}
+}

@@ -4,14 +4,7 @@
 		"description": "Trigger que ejecuta Pipeline de prestamos bancarios (punta a punta medallón) en horario 21:00:00 Brasilia (UTC-3)",
 		"annotations": [],
 		"runtimeState": "Stopped",
-		"pipelines": [
-			{
-				"pipelineReference": {
-					"referenceName": "PL_Copy_CSV_to_SQL",
-					"type": "PipelineReference"
-				}
-			}
-		],
+		"pipelines": [],
 		"type": "ScheduleTrigger",
 		"typeProperties": {
 			"recurrence": {

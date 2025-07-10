@@ -49,4 +49,4 @@ Todos estos indicadores son integrados en una tabla final:
 
 ---
 
-> 💼 Este pipeline demuestra una implementación de un sistema de datos moderno en la nube en tiempo casi real, con una carga automatica mediante **Schedule Trigger** (8:27 PM)
+> 💼 Este pipeline demuestra una implementación de un sistema de datos moderno en la nube en tiempo casi real, con un recorrido de punta a punta automatico mediante **Schedule Trigger** (8:27 PM)

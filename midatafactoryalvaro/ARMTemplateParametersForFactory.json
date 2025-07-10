@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "midatafactoryalvaro"
+		},
+		"LS_DataLake_connectionString": {
+			"value": ""
+		},
+		"LS_SQL_Database_password": {
+			"value": ""
+		},
+		"LS_conexion_storage_general_connectionString": {
+			"value": ""
+		},
+		"LS_databricks_medallion_accessToken": {
+			"value": ""
+		},
+		"LS_transactions_project_accessToken": {
+			"value": ""
+		},
+		"LS_SQL_Database_properties_typeProperties_server": {
+			"value": "alvaroserver.database.windows.net"
+		},
+		"LS_SQL_Database_properties_typeProperties_database": {
+			"value": "DB_loan_project"
+		},
+		"LS_SQL_Database_properties_typeProperties_userName": {
+			"value": "adminalvaro"
+		},
+		"LS_databricks_medallion_properties_typeProperties_existingClusterId": {
+			"value": "0627-011511-guaf4c1k"
+		},
+		"LS_transactions_project_properties_typeProperties_existingClusterId": {
+			"value": "0627-011511-guaf4c1k"
+		}
+	}
+}

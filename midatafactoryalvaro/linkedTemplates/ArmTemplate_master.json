@@ -1,0 +1,112 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Nombre de instancia de Data Factory",
+			"defaultValue": "midatafactoryalvaro"
+		},
+		"LS_DataLake_connectionString": {
+			"type": "secureString",
+			"metadata": "Cadena protegida para \"connectionString\"de \"LS_DataLake\""
+		},
+		"LS_SQL_Database_password": {
+			"type": "secureString",
+			"metadata": "Cadena protegida para \"password\"de \"LS_SQL_Database\""
+		},
+		"LS_conexion_storage_general_connectionString": {
+			"type": "secureString",
+			"metadata": "Cadena protegida para \"connectionString\"de \"LS_conexion_storage_general\""
+		},
+		"LS_databricks_medallion_accessToken": {
+			"type": "secureString",
+			"metadata": "Cadena protegida para \"accessToken\"de \"LS_databricks_medallion\""
+		},
+		"LS_transactions_project_accessToken": {
+			"type": "secureString",
+			"metadata": "Cadena protegida para \"accessToken\"de \"LS_transactions_project\""
+		},
+		"LS_SQL_Database_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "alvaroserver.database.windows.net"
+		},
+		"LS_SQL_Database_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "DB_loan_project"
+		},
+		"LS_SQL_Database_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "adminalvaro"
+		},
+		"LS_databricks_medallion_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "0627-011511-guaf4c1k"
+		},
+		"LS_transactions_project_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "0627-011511-guaf4c1k"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI de la cuenta de almacenamiento que contiene las plantillas de ARM vinculadas."
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Token de SAS para la cuenta de almacenamiento que contiene las plantillas de ARM vinculadas"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "midatafactoryalvaro_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"LS_DataLake_connectionString": {
+						"value": "[parameters('LS_DataLake_connectionString')]"
+					},
+					"LS_SQL_Database_password": {
+						"value": "[parameters('LS_SQL_Database_password')]"
+					},
+					"LS_conexion_storage_general_connectionString": {
+						"value": "[parameters('LS_conexion_storage_general_connectionString')]"
+					},
+					"LS_databricks_medallion_accessToken": {
+						"value": "[parameters('LS_databricks_medallion_accessToken')]"
+					},
+					"LS_transactions_project_accessToken": {
+						"value": "[parameters('LS_transactions_project_accessToken')]"
+					},
+					"LS_SQL_Database_properties_typeProperties_server": {
+						"value": "[parameters('LS_SQL_Database_properties_typeProperties_server')]"
+					},
+					"LS_SQL_Database_properties_typeProperties_database": {
+						"value": "[parameters('LS_SQL_Database_properties_typeProperties_database')]"
+					},
+					"LS_SQL_Database_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SQL_Database_properties_typeProperties_userName')]"
+					},
+					"LS_databricks_medallion_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('LS_databricks_medallion_properties_typeProperties_existingClusterId')]"
+					},
+					"LS_transactions_project_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('LS_transactions_project_properties_typeProperties_existingClusterId')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

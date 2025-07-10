@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/8f98cc64-c3c8-4dea-b407-980a0fbe21d9)# 🔷 SmartBank Transactions Pipeline: ETL Streaming con Azure y Databricks
+# 🔷 SmartBank Transactions Pipeline: ETL Streaming con Azure y Databricks
 
 ## 🧾 Descripción del Proyecto
 

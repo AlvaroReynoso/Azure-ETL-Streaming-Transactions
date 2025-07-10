@@ -55,25 +55,39 @@ Todos estos indicadores son integrados en una tabla final:
 Screenshots / Capturas:
 
 Script principal de ingesta a Azure eventHub
+
+
 ![image](https://github.com/user-attachments/assets/8fafbfb2-5651-4cfe-af52-0a2b41a16c97)
 ![image](https://github.com/user-attachments/assets/1d2cb5c2-5e24-4c32-bbd1-0b6d1a86cbe3)
 
 Llegada de requests a Azure eventHub
+
+
 ![image](https://github.com/user-attachments/assets/6a528f67-db69-455b-b50a-30e464fcbf3a)
 
 Pipeline Bronce y silver
+
+
 ![image](https://github.com/user-attachments/assets/f8e6390c-f97d-4b69-a976-1f5fc9c9e60d)
 
 Checkpoints Silver
+
+
 ![image](https://github.com/user-attachments/assets/145f98a5-fd51-4b42-9758-e3aa38f15307)
 
 
 Pipeline Gold y load a Azure SQL
+
+
 ![image](https://github.com/user-attachments/assets/9efddc03-6171-4edb-bfeb-3e5c363d15b7)
 
 Verificaciones de registros nuevos en Azure SQL
+
+
 ![image](https://github.com/user-attachments/assets/bce2ae4a-9ef1-4979-b340-4632ce9b6848)
 
 KPI's final (Gold)
+
+
 ![image](https://github.com/user-attachments/assets/c4dab88a-9d63-473f-b370-021496bff602)
 

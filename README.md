@@ -4,7 +4,8 @@
 
 Este proyecto implementa un pipeline **ETL en streaming** de transacciones financieras utilizando herramientas modernas de Azure y Apache Spark.  
 Emplea una arquitectura **medallón (Bronze, Silver, Gold)** para asegurar calidad, trazabilidad y valor en cada capa del procesamiento de datos.
-Finalmente cargando datos procesados, estructurados y listos para análisis en Azure SQL, creando una arquitectura **Warehouse**
+Finalmente Integré un **Data Warehouse** en Azure utilizando Azure SQL Database para almacenar los datos transformados y enriquecidos (capa Gold), facilitando su consumo desde herramientas como Power BI.
+
 
 ---
 

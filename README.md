@@ -117,34 +117,34 @@ All these indicators are integrated into a final table:
 
 Screenshots / Capturas:
 
-Script principal de ingesta a Azure eventHub
+Script principal de ingesta a Azure eventHub / Main ingestion script to Azure Event Hub
 
 
 ![image](https://github.com/user-attachments/assets/8fafbfb2-5651-4cfe-af52-0a2b41a16c97)
 ![image](https://github.com/user-attachments/assets/1d2cb5c2-5e24-4c32-bbd1-0b6d1a86cbe3)
 
-Llegada de requests a Azure eventHub
+Llegada de requests a Azure eventHub / Incoming requests to Azure Event Hub
 
 
 ![image](https://github.com/user-attachments/assets/6a528f67-db69-455b-b50a-30e464fcbf3a)
 
-Pipeline Bronce y silver
+Pipeline Bronce y silver / Bronze and Silver pipelines
 
 
 ![image](https://github.com/user-attachments/assets/f8e6390c-f97d-4b69-a976-1f5fc9c9e60d)
 
-Checkpoints Silver
+Silver Checkpoints
 
 
 ![image](https://github.com/user-attachments/assets/145f98a5-fd51-4b42-9758-e3aa38f15307)
 
 
-Pipeline Gold y load a Azure SQL
+Pipeline Gold y load a Azure SQL / Gold pipeline and load to Azure SQL
 
 
 ![image](https://github.com/user-attachments/assets/9efddc03-6171-4edb-bfeb-3e5c363d15b7)
 
-Verificaciones de registros nuevos en Azure SQL
+Verificaciones de registros nuevos en Azure SQL / New record validations in Azure SQL
 
 
 ![image](https://github.com/user-attachments/assets/bce2ae4a-9ef1-4979-b340-4632ce9b6848)

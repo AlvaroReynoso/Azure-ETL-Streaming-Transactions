@@ -53,6 +53,66 @@ Todos estos indicadores son integrados en una tabla final:
 
 > 💼 Este pipeline demuestra una implementación de un sistema de datos moderno en la nube en tiempo casi real, con un recorrido de punta a punta automatico mediante **Schedule Trigger** (8:27 PM)
 
+📽️ **Link al video:** youtube.com/watch?v=_DLKdh77C54&feature=youtu.be
+
+
+---
+
+# 🔷 SmartBank Transactions Pipeline: ETL Streaming with Azure and Databricks
+
+## 🧾 Project Description
+
+This project implements a **streaming ETL** pipeline for financial transactions using modern Azure and Apache Spark tools.  
+It employs a **medallion architecture (Bronze, Silver, Gold)** to ensure quality, traceability, and value at each data processing layer.  
+Finally, I integrated a **Data Warehouse** in Azure using Azure SQL Database to store the transformed and enriched data (Gold layer), facilitating consumption from tools like Power BI.
+
+---
+
+## 🏗️ Technologies Used
+
+- **Azure Data Lake Storage (ADLS Gen2)**: scalable storage for raw and transformed data  
+- **Azure Event Hub**: real-time data ingestion service  
+- **Databricks Autoloader**: continuous data ingestion  
+- **Databricks (PySpark Structured Streaming)**: near real-time processing  
+- **Delta Lake**: reliable, versioned, and scalable data management  
+- **Unity Catalog**: data governance and centralized access control  
+- **Databricks Secrets**: secure credentials management  
+- **Azure SQL Database**: Warehouse architecture
+
+---
+
+## 🧱 Medallion Architecture
+
+### 🔹 Bronze Layer
+- Continuous ingestion of JSON transaction files using Autoloader.  
+- Data stored in **Delta** format, without modifications.  
+- Ensures **traceability** and fault recovery.
+
+### 🔸 Silver Layer
+- Data cleaning and validations (amount > 0, mandatory non-null fields).  
+- Data enrichment:  
+  - Derivation of date/time columns  
+  - Text normalization  
+  - Amount classification (`amount_level`)  
+  - Basic fraud detection  
+- Data written as a **managed Delta table** in the **Unity Catalog**.
+
+### 🏅 Gold Layer  
+Aggregations and key metrics by country and channel:  
+- Total transactions  
+- Total and average amount sums  
+- Percentage of detected frauds  
+- Ratio of high-value transactions (`high_value_ratio_percent`)  
+- Writing to CSV and Delta tables in **Unity Catalog**
+
+All these indicators are integrated into a final table:  
+➡️ **`gold_transactions.gold.global_kpis`**
+
+---
+
+> 💼 This pipeline demonstrates the implementation of a modern near real-time cloud data system, with an end-to-end automated run via **Schedule Trigger** (8:27 PM)
+
+📽️ **Video Link:** [youtube.com/watch?v=_DLKdh77C54&feature=youtu.be](https://youtube.com/watch?v=_DLKdh77C54&feature=youtu.be)
 
 
 Screenshots / Capturas:

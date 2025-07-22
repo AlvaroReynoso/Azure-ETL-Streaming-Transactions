@@ -53,7 +53,7 @@ Todos estos indicadores son integrados en una tabla final:
 
 > 💼 Este pipeline demuestra una implementación de un sistema de datos moderno en la nube en tiempo casi real, con un recorrido de punta a punta automatico mediante **Schedule Trigger** (8:27 PM)
 
-📽️ **Link al video:** youtube.com/watch?v=_DLKdh77C54&feature=youtu.be
+📽️ **Link al video:** [youtube.com/watch?v=_DLKdh77C54&feature=youtu.be](https://youtube.com/watch?v=_DLKdh77C54&feature=youtu.be)
 
 
 ---
